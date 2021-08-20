@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
             else { 
                 
-                    window.location = 'index.html';
+                    window.location = 'inicio.html';
                     
                 
             
