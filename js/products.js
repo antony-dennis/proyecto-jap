@@ -6,7 +6,7 @@ var productosArray=[];
 
 
 
-function showCategoriesList(){
+function showProductsList(){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < productosArray.length; i++){
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if(resultado.status === "ok"){
             productosArray=resultado.data;
             //llamar funcion con la que hago cosas
-            showCategoriesList();
+            showProductsList();
             
         }
     });
