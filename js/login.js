@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
             else { 
                 
-                    window.location = 'https://antony-dennis.github.io/proyecto-jap/inicio.html';
+                    window.location = 'inicio.html';
                     
                 
             
