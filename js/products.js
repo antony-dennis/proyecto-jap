@@ -51,7 +51,7 @@ document.getElementById("rangFiiltPrice").addEventListener("click", function () 
     let valMin = document.getElementById("rangeFilterCountMin").value;
     let valMax = document.getElementById("rangeFilterCountMax").value;
     
-    alert(valMin.value)
+    
     if ((valMin.length==0) || (valMax.length==0)) {
         
         
