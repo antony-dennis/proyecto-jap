@@ -1,4 +1,6 @@
 var productosArray = [];
+minCount = undefined;
+maxCount = undefined;
 
 
 
@@ -48,25 +50,35 @@ document.getElementById("clearRangeFilter").addEventListener("click", function (
 
 //Filtro diseñad
 document.getElementById("rangFiiltPrice").addEventListener("click", function () {
-    let valMin = document.getElementById("rangeFilterCountMin").value;
-    let valMax = document.getElementById("rangeFilterCountMax").value;
-    
-    
-    if ((valMin.length==0) || (valMax.length==0)) {
-        
-        
+    minCount = document.getElementById("rangeFilterCountMin").value;
+    maxCount = document.getElementById("rangeFilterCountMax").value;
+
+    if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0) {
+        minCount = parseInt(minCount);
     }
     else {
-        let htmlContentToAppend = "";
-    document.getElementById("productos-list-container").innerHTML = htmlContentToAppend;
+        minCount = undefined;
+    }
 
-        for (let i = 0; i < productosArray.length; i++) {
-            let producto = productosArray[i];
+    if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0) {
+        maxCount = parseInt(maxCount);
+    }
+    else {
+        maxCount = undefined;
+    }
+    let htmlContentToAppend = "";
+    for (let i = 0; i < productosArray.length; i++) {
+        let producto = productosArray[i];
+
+        if (((minCount == undefined) || (minCount != undefined && parseInt(producto.cost) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount))) {
 
 
-            if (parseInt(producto.cost) <= valMax && parseInt(producto.cost) >= valMin) {
 
-                htmlContentToAppend += `
+
+
+
+            htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
@@ -81,21 +93,14 @@ document.getElementById("rangFiiltPrice").addEventListener("click", function () 
                     </div>
                 </div>
             </a>
-            `
-            }
-
-
-
+            `;
         }
-
-
-
-
-
-
 
         document.getElementById("productos-list-container").innerHTML = htmlContentToAppend;
     }
+
+
+
 });
 
 
