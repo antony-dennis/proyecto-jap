@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             else { 
                 
                     window.location = 'inicio.html';
+                    setUserLocalStorage();
                     
                 
             
@@ -42,3 +43,11 @@ document.addEventListener("DOMContentLoaded", function(e){
     })
 
 });
+function setUserLocalStorage(){
+    let usuario={
+      user: document.getElementById("inputEmail").value,
+      password: document.getElementById("inputPassword").value
+    }
+    let usuarios_json =JSON.stringify(usuario);
+    localStorage.setItem("local_users",usuarios_json);
+    }
