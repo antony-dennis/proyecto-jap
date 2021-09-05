@@ -17,6 +17,7 @@ function showProductsList() {
     let htmlContentToAppend = "";
     for (let i = 0; i < productosArray.length; i++) {
         let producto = productosArray[i];
+        
         if (((minCount == undefined) || (minCount != undefined && parseInt(producto.cost) >= minCount)) &&
         ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount))){
 
@@ -33,6 +34,7 @@ function showProductsList() {
                             <small class="text-muted">` + producto.currency + ` ` + producto.cost + `</small>
                         </div>
                         <p class="mb-1">` + producto.description + `</p>
+                        <small class="text-muted">Vendidos:` + producto.soldCount +  ` </small>
                     </div>
                 </div>
             </a>
