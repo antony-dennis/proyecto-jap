@@ -97,6 +97,7 @@ document.getElementById("rangFiiltPrice").addEventListener("click", function () 
                             <small class="text-muted">` + producto.currency + ` ` + producto.cost + `</small>
                         </div>
                         <p class="mb-1">` + producto.description + `</p>
+                        <small class="text-muted">Vendidos:` + producto.soldCount +  ` </small>
                     </div>
                 </div>
             </a>
